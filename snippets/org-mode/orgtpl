@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: org template
+# key: orgtpl
+# --
+#+TITLE: $1
+#+STYLE: <link rel="stylesheet" type="text/css" href="$2./resources/style/style.css" />
+#+LINK_HOME: $3./index.html
+#+FILETAGS: :$4:
+#+AUTHOR: BillyHuang@sina.cn
+
+$5

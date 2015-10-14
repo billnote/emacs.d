@@ -8,6 +8,7 @@
 (require 'init-my-org)
 (require 'init-yasnippet)
 (require 'init-org-publish)
+(require 'init-org-to-pdf)
 
 (provide 'init-local)
 ;;; init-local.el ends here

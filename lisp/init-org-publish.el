@@ -5,6 +5,38 @@
 
 (setq org-publish-project-alist
       '(
+        ;;; TOS Server wiki setting
+        ("dmj-org"
+         :base-directory "/home/bill.huang/documents/dmj/wiki/org"
+         :publishing-directory "/home/bill.huang/documents/dmj/wiki/html"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :auto-sitemap t
+         :sitemap-filename "sitemap.org"
+         :sitemap-title "sitemap"
+         :sitemap-sort-folders "last")
+        ("dmj-static"
+         :base-directory "/home/bill.huang/documents/dmj/wiki/org"
+         :publishing-directory "/home/bill.huang/documents/dmj/wiki/html"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|swf\\|zip\\|gz\\|txt"
+         :publishing-function org-publish-attachment)
+        ("dmj-pdf"
+         :base-directory "/home/bill.huang/documents/dmj/wiki/org"
+         :publishing-directory "/home/bill.huang/documents/dmj/wiki/pdf"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-latex-publish-to-pdf
+         :auto-sitemap t
+         :sitemap-filename "sitemap.org"
+         :sitemap-title "sitemap"
+         :sitemap-sort-folders "last"
+         )
+        ("dmjwiki"
+         :components ("dmj-org" "dmj-static" "dmj-pdf")
+         :author "bill.huang@adchina.com")
+
         ;;; AdServer wiki setting
         ("adserverwiki-org"
          :base-directory "/home/bill.huang/workspace/adserver-wiki/org"
