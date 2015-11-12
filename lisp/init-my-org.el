@@ -17,7 +17,7 @@
 
 ;;设置plantuml & dita
 ;;(require 'ob-plantuml)
-(setq org-plantuml-jar-path "/.emacs.d/tools/plantuml/plantuml.jar")
+(setq org-plantuml-jar-path "~/.emacs.d/tools/plantuml/plantuml.jar")
 (setq org-ditaa-jar-path "~/.emacs.d/tools/ditaa/ditaa.jar")
 
 (org-babel-do-load-languages
