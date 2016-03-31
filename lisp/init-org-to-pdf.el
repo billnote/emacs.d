@@ -46,7 +46,7 @@
 \\usepackage{natbib}
 \\usepackage[xetex,colorlinks=true,CJKbookmarks=true,linkcolor=blue,urlcolor=blue,menucolor=blue]{hyperref}
 \\usepackage{fontspec,xunicode,xltxtra}
-\\usepackage{titlesec} %设置页眉页脚的宏包
+\\usepackage{fancyhdr} %设置页眉页脚的宏包
 \\setmainfont[BoldFont=DejaVu Sans]{DejaVu Sans}
 \\setsansfont[BoldFont=DejaVu Sans]{DejaVu Sans}
 \\setmonofont{DejaVu Sans Mono}
@@ -60,6 +60,8 @@
 \\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \\punctstyle{kaiming}
 \\tolerance=1000
+\\fancyfoot[C]{\\bfseries\\thepage}
+\\pagestyle{fancy}
 \\lstdefinestyle{codestyle}{
     backgroundcolor=\\color{backcolour},
     commentstyle=\\color{codegreen},
