@@ -44,38 +44,42 @@
 \\usepackage{wasysym}
 \\usepackage{latexsym}
 \\usepackage{natbib}
-\\usepackage{fancyhdr}
 \\usepackage[xetex,colorlinks=true,CJKbookmarks=true,linkcolor=blue,urlcolor=blue,menucolor=blue]{hyperref}
 \\usepackage{fontspec,xunicode,xltxtra}
-\\setmainfont[BoldFont=WenQuanYi Micro Hei]{WenQuanYi Micro Hei}
-\\setsansfont[BoldFont=WenQuanYi Micro Hei]{WenQuanYi Micro Hei}
-\\setmonofont{WenQuanYi Micro Hei Mono}
-\\newcommand\\fontnamemono{WenQuanYi Zen Hei Mono}%等宽字体
-\\newfontinstance\\MONO{\\fontnamemono}
-\\newcommand{\\mono}[1]{{\\MONO #1}}
-\\setCJKmainfont[Scale=0.9]{WenQuanYi Micro Hei}%中文字体
-\\setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei}
+\\usepackage{titlesec} %设置页眉页脚的宏包
+\\setmainfont[BoldFont=DejaVu Sans]{DejaVu Sans}
+\\setsansfont[BoldFont=DejaVu Sans]{DejaVu Sans}
+\\setmonofont{DejaVu Sans Mono}
+\\setCJKmainfont{WenQuanYi Micro Hei}%中文字体
+\\setCJKmonofont{WenQuanYi Micro Hei Mono}
 \\hypersetup{unicode=true}
 \\geometry{a4paper, textwidth=6.5in, textheight=10in,marginparsep=7pt, marginparwidth=.6in}
-\\definecolor{foreground}{RGB}{220,220,204}%浅灰
-\\definecolor{background}{RGB}{62,62,62}%浅黑
-\\definecolor{preprocess}{RGB}{250,187,249}%浅紫
-\\definecolor{var}{RGB}{239,224,174}%浅肉色
-\\definecolor{string}{RGB}{154,150,230}%浅紫色
-\\definecolor{type}{RGB}{225,225,116}%浅黄
-\\definecolor{function}{RGB}{140,206,211}%浅天蓝
-\\definecolor{keyword}{RGB}{239,224,174}%浅肉色
-\\definecolor{comment}{RGB}{180,98,4}%深褐色
-\\definecolor{doc}{RGB}{175,215,175}%浅铅绿
-\\definecolor{comdil}{RGB}{111,128,111}%深灰
-\\definecolor{constant}{RGB}{220,162,170}%粉红
-\\definecolor{buildin}{RGB}{127,159,127}%深铅绿
+\\definecolor{codegreen}{rgb}{0,0.6,0}
+\\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \\punctstyle{kaiming}
-\\title{}
-\\fancyfoot[C]{\\bfseries\\thepage}
-\\chead{\\MakeUppercase\\sectionmark}
-\\pagestyle{fancy}
 \\tolerance=1000
+\\lstdefinestyle{codestyle}{
+    backgroundcolor=\\color{backcolour},
+    commentstyle=\\color{codegreen},
+    keywordstyle=\\color{magenta},
+    numberstyle=\\tiny\\color{codegray},
+    stringstyle=\\color{codepurple},
+    basicstyle=\\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    frameround=tttt,
+    framerule=8pt}
 [NO-DEFAULT-PACKAGES]
 [NO-PACKAGES]"
 ("\\section{%s}" . "\\section*{%s}")
@@ -88,32 +92,7 @@
 (setq org-latex-listings t)
 ;; Options for \lset command（reference to listing Manual)
 (setq org-latex-listings-options
-      '(
-        ("basicstyle" "\\color{foreground}\\small\\mono")           ; 源代码字体样式
-        ("keywordstyle" "\\color{function}\\bfseries\\small\\mono") ; 关键词字体样式
-        ("identifierstyle" "\\color{doc}\\small\\mono")
-        ("commentstyle" "\\color{comment}\\small\\itshape")         ; 批注样式
-        ("stringstyle" "\\color{string}\\small")                    ; 字符串样式
-        ("showstringspaces" "false")                                ; 字符串空格显示
-        ("numbers" "left")                                          ; 行号显示
-        ("numberstyle" "\\color{preprocess}")                       ; 行号样式
-        ("stepnumber" "1")                                          ; 行号递增
-        ("backgroundcolor" "\\color{background}")                   ; 代码框背景色
-        ("tabsize" "4")                                             ; TAB等效空格数
-        ("captionpos" "t")                                          ; 标题位置 top or buttom(t|b)
-        ("breaklines" "true")                                       ; 自动断行
-        ("breakatwhitespace" "true")                                ; 只在空格分行
-        ("showspaces" "false")                                      ; 显示空格
-        ("columns" "flexible")                                      ; 列样式
-        ("frame" "single")                                          ; 代码框：阴影盒
-        ("frameround" "tttt")                                       ; 代码框： 圆角
-        ("framesep" "0pt")
-        ("framerule" "8pt")
-        ("rulecolor" "\\color{background}")
-        ("fillcolor" "\\color{white}")
-        ("rulesepcolor" "\\color{comdil}")
-        ("framexleftmargin" "10mm")
-        ))
+      '(("style" "codestyle")))
 ;; Make Org use ido-completing-read for most of its completing prompts.
 (setq org-completion-use-ido t)
 ;; 各种Babel语言支持
@@ -131,6 +110,7 @@
    (dot . t)
    (latex . t)
    (js . t)
+   (java . t)
    ))
 
 ;; 导出Beamer的设置

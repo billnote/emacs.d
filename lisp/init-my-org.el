@@ -6,12 +6,12 @@
 (setq org-agenda-files (list "~/todo/" "~/todo/.bill/"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
-      '(("a" "AdServer" entry (file+headline "~/todo/project.org" "Other Tasks") "* TODO %? %^g\n %i" :prepend t)
-        ("d" "DMP Client" entry (file+headline "~/todo/project.org" "DMP Client") "* TODO %? %^g\n %i")
-        ("p" "Publish Tool" entry (file+headline "~/todo/project.org" "Publish Tool") "* TODO %? %^g\n %i")
-        ("i" "Idea" entry (file+headline "~/todo/task.org" "Ideas") "* TODO %? %^g\n %i" :prepend t)
-        ("t" "Task" entry (file+headline "~/todo/task.org" "Tasks") "* TODO %? %^g\n %i" :prepend t)
-        ("n" "Note" entry (file+headline "~/todo/note.org" "Notes") "* %U %?\n\n %i" :prepend t :empty-lines 1)
+      '(("m" "m+server" entry (file+headline "~/.todo/project.org" "Other Tasks") "* TODO %? %^g\n %i" :prepend t)
+        ("d" "DMP Client" entry (file+headline "~/.todo/project.org" "DMP Client") "* TODO %? %^g\n %i")
+        ("p" "Publish Tool" entry (file+headline "~/.todo/project.org" "Publish Tool") "* TODO %? %^g\n %i")
+        ("i" "Idea" entry (file+headline "~/.todo/task.org" "Ideas") "* TODO %? %^g\n %i" :prepend t)
+        ("t" "Task" entry (file+headline "~/.todo/task.org" "Tasks") "* TODO %? %^g\n %i" :prepend t)
+        ("n" "Note" entry (file+headline "~/.todo/note.org" "Notes") "* %U %?\n\n %i" :prepend t :empty-lines 1)
         ("u" "Account" table-line (file+headline "~/.account.org" "bill accounts") "| %? | %? | %? | %U |")))
 (setq org-agenda-include-diary t)
 
@@ -29,6 +29,8 @@
 
 ;;生成图像不提示
 (setq org-confirm-babel-evaluate nil)
+
+;;(setq org-export-with-sub-superscripts {})
 
 (provide 'init-my-org)
 
