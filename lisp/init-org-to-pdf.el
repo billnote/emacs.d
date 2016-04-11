@@ -23,9 +23,9 @@
 
 (add-to-list 'org-latex-classes
              '("cn-article"
-               "\\documentclass[10pt,a4paper]{article}
+               "\\documentclass[10pt,a4paper,titlepage]{article}
 \\usepackage{graphicx}
-\\usepackage{xcolor}
+\\usepackage[table,svgnames]{xcolor}
 \\usepackage{xeCJK}
 \\usepackage{lmodern}
 \\usepackage{verbatim}
@@ -44,12 +44,17 @@
 \\usepackage{wasysym}
 \\usepackage{latexsym}
 \\usepackage{natbib}
+\\usepackage{array,tabularx}
+\\usepackage{tcolorbox}
+\\tcbuselibrary{skins}
+\\tcbuselibrary{hooks}
 \\usepackage[xetex,colorlinks=true,CJKbookmarks=true,linkcolor=blue,urlcolor=blue,menucolor=blue]{hyperref}
 \\usepackage{fontspec,xunicode,xltxtra}
 \\usepackage{fancyhdr} %设置页眉页脚的宏包
-\\setmainfont[BoldFont=DejaVu Sans]{DejaVu Sans}
-\\setsansfont[BoldFont=DejaVu Sans]{DejaVu Sans}
-\\setmonofont{DejaVu Sans Mono}
+\\usepackage{indentfirst}
+\\setmainfont[BoldFont=Liberation Sans]{Liberation Sans}
+\\setsansfont[BoldFont=Liberation Sans]{Liberation Sans}
+\\setmonofont{Liberation Mono}
 \\setCJKmainfont{WenQuanYi Micro Hei}%中文字体
 \\setCJKmonofont{WenQuanYi Micro Hei Mono}
 \\hypersetup{unicode=true}
@@ -58,12 +63,22 @@
 \\definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \\definecolor{codepurple}{rgb}{0.58,0,0.82}
 \\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\\colorlet{punct}{red!60!black}
+\\definecolor{background}{HTML}{EEEEEE}
+\\definecolor{delim}{RGB}{20,105,176}
+\\colorlet{numb}{magenta!60!black}
 \\punctstyle{kaiming}
 \\tolerance=1000
 \\fancyfoot[C]{\\bfseries\\thepage}
 \\pagestyle{fancy}
-\\lstdefinestyle{codestyle}{
-    backgroundcolor=\\color{backcolour},
+\\newcommand\\JSONnumbervaluestyle{\\color{blue}}
+\\newcommand\\JSONstringvaluestyle{\\color{red}}
+% switch used as state variable
+\\newif\\ifcolonfoundonthisline
+\\makeatletter
+\\lstdefinestyle{codestyle}
+{
+   backgroundcolor=\\color{backcolour},
     commentstyle=\\color{codegreen},
     keywordstyle=\\color{magenta},
     numberstyle=\\tiny\\color{codegray},
@@ -82,6 +97,55 @@
     frame=single,
     frameround=tttt,
     framerule=8pt}
+
+% flip the switch if a colon is found in Pmode
+\\newcommand\\processColon@codestyle{%
+  \\colon@codestyle%
+  \\ifnum\\lst@mode=\\lst@Pmode%
+    \\global\\colonfoundonthislinetrue%
+  \\fi
+}
+
+\\lst@AddToHook{Output}{%
+  \\ifcolonfoundonthisline%
+    \\ifnum\\lst@mode=\\lst@Pmode%
+      \\def\\lst@thestyle{\\JSONnumbervaluestyle}%
+    \\fi
+  \\fi
+  %override by keyword style if a keyword is detected!
+  \\lsthk@DetectKeywords% 
+}
+
+% reset the switch at the end of line
+\\lst@AddToHook{EOL}%
+  {\\global\\colonfoundonthislinefalse}
+\\makeatother
+
+\\lstdefinelanguage{json}{ % support json
+    keywords={false,true},
+    alsoletter=0123456789.,
+    morecomment=[l]//,
+    morecomment=[s]{/*}{*/},
+    morestring=[s]{\"}{\"},
+    stringstyle=\\ifcolonfoundonthisline\\JSONstringvaluestyle\\fi,
+    MoreSelectCharTable=\\lst@DefSaveDef{`:}\\colon@codestyle{\\processColon@codestyle},
+    literate=
+     *{:}{{{\\color{punct}{:}}}}{1}
+      {,}{{{\\color{punct}{,}}}}{1}
+      {\\{}{{{\\color{delim}{\\{}}}}{1}
+      {\\}}{{{\\color{delim}{\\}}}}}{1}
+      {[}{{{\\color{delim}{[}}}}{1}
+      {]}{{{\\color{delim}{]}}}}{1},
+}
+\\lstdefinelanguage{js}{ % support js
+    morekeywords={typeof,new,true,false,catch,function,return,null,catch,switch,var,if,in,while,do,else,case,break},
+    morecomment=[l]//,
+    morecomment=[s]{/*}{*/},
+    morestring=[b]\",
+    morestring=[b]\',
+    }[keywords,comments,strings]
+\\setlength\\arrayrulewidth{0.8pt}\\arrayrulecolor{MidnightBlue} % table line style
+%\\rowcolors{1}{Linen}{Beige} % table 行颜色设置
 [NO-DEFAULT-PACKAGES]
 [NO-PACKAGES]"
 ("\\section{%s}" . "\\section*{%s}")

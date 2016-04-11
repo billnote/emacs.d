@@ -3,11 +3,11 @@
 ;;; org project config
 ;;; Code:
 
-(setq org-agenda-files (list "~/todo/" "~/todo/.bill/"))
+(setq org-agenda-files (list "~/.todo/" "~/.todo/.bill/"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
-      '(("m" "m+server" entry (file+headline "~/.todo/project.org" "Other Tasks") "* TODO %? %^g\n %i" :prepend t)
-        ("d" "DMP Client" entry (file+headline "~/.todo/project.org" "DMP Client") "* TODO %? %^g\n %i")
+      '(("m" "m+server" entry (file+headline "~/.todo/projects.org" "Other Tasks") "* TODO %? %^g\n %i" :prepend t)
+        ("d" "DMP Client" entry (file+headline "~/.todo/projects.org" "DMP Client") "* TODO %? %^g\n %i")
         ("p" "Publish Tool" entry (file+headline "~/.todo/project.org" "Publish Tool") "* TODO %? %^g\n %i")
         ("i" "Idea" entry (file+headline "~/.todo/task.org" "Ideas") "* TODO %? %^g\n %i" :prepend t)
         ("t" "Task" entry (file+headline "~/.todo/task.org" "Tasks") "* TODO %? %^g\n %i" :prepend t)
