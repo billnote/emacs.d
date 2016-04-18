@@ -6,7 +6,7 @@
 (setq org-publish-project-alist
       '(
         ;;; mplus wiki setting
-        ("m-org"
+        ("m-html"
          :base-directory "/home/bill.huang/documents/m/server/wiki/org"
          :publishing-directory "/home/bill.huang/documents/m/server/wiki/html"
          :base-extension "org"
@@ -20,7 +20,7 @@
          :base-directory "/home/bill.huang/documents/m/server/wiki/org"
          :publishing-directory "/home/bill.huang/documents/m/server/wiki/html"
          :recursive t
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|swf\\|zip\\|gz\\|txt"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|mp3\\|swf\\|zip\\|gz\\|txt"
          :publishing-function org-publish-attachment)
         ("m-pdf"
          :base-directory "/home/bill.huang/documents/m/server/wiki/org"
@@ -33,12 +33,24 @@
          :sitemap-title "sitemap"
          :sitemap-sort-folders "last"
          )
+        ("g-static"
+         :base-directory "/home/bill.huang/documents/m/server/wiki/org"
+         :publishing-directory "/home/bill.huang/workspace/Documents/server/sources"
+         :recursive t
+         :base-extension "tex\\|org\\|css\\|js\\|png\\|jpg\\|gif\\|mp3\\|swf\\|zip\\|gz\\|txt"
+         :publishing-function org-publish-attachment)
+        ("g-pdf"
+         :base-directory "/home/bill.huang/documents/m/server/wiki/pdf"
+         :publishing-directory "/home/bill.huang/workspace/Documents/server"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|swf\\|zip\\|gz\\|txt"
+         :publishing-function org-publish-attachment)
         ("mwiki"
-         :components ("dmj-org" "dmj-static" "dmj-pdf")
-         :author "bill.huang@adchina.com")
+         :components ("m-html" "m-static" "m-pdf" "g-static" "g-pdf")
+         :author "bill.huang@mplusmedia.com")
 
         ;;; my blogs setting
-        ("blog-org"
+        ("blog-html"
          :base-directory "/home/bill.huang/documents/mymind/org"
          :publishing-directory "/home/bill.huang/documents/mymind/blog"
          :base-extension "org"
@@ -61,7 +73,7 @@
          :base-extension "dot\\|org\\|java"
          :publishing-function org-publish-attachment)
         ("blog"
-         :components ("blog-org" "blog-static" "blog-sources")
+         :components ("blog-html" "blog-static" "blog-sources")
          :author "billyhuang@sina.cn")))
 
 (provide 'init-org-publish)

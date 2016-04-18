@@ -12,7 +12,7 @@
         ("i" "Idea" entry (file+headline "~/.todo/task.org" "Ideas") "* TODO %? %^g\n %i" :prepend t)
         ("t" "Task" entry (file+headline "~/.todo/task.org" "Tasks") "* TODO %? %^g\n %i" :prepend t)
         ("n" "Note" entry (file+headline "~/.todo/note.org" "Notes") "* %U %?\n\n %i" :prepend t :empty-lines 1)
-        ("u" "Account" table-line (file+headline "~/.account.org" "bill accounts") "| %? | %? | %? | %U |")))
+        ("u" "Account" table-line (file+headline "~/.account/.account.org.gpg" "bill accounts") "| %? | %? | %? | %U |")))
 (setq org-agenda-include-diary t)
 
 ;;设置plantuml & dita

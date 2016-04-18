@@ -10,6 +10,7 @@
 (require 'init-org-publish)
 (require 'init-org-to-pdf)
 (require 'init-rust)
+(require 'init-mu4e)
 
 (provide 'init-local)
 ;;; init-local.el ends here
