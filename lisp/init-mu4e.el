@@ -5,6 +5,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/mu4e")
 
+(require-package 'smtpmail-multi)
+
 (require 'mu4e)
 (require 'smtpmail-multi)
 (require 'smtpmail)
@@ -39,7 +41,7 @@
 ;; (better only use that for the last field.
 ;; These are the defaults:
 (setq mu4e-headers-fields
-      '( (:date          .  25)    ;; alternatively, use :human-date
+      '( (:date          .  16)    ;; alternatively, use :human-date
          (:flags         .   6)
          (:from          .  22)
          (:subject       .  nil))) ;; alternatively, use :thread-subject
