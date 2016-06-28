@@ -41,7 +41,7 @@
 ;; (better only use that for the last field.
 ;; These are the defaults:
 (setq mu4e-headers-fields
-      '( (:date          .  16)    ;; alternatively, use :human-date
+      '( (:date          .  12)    ;; alternatively, use :human-date
          (:flags         .   6)
          (:from          .  22)
          (:subject       .  nil))) ;; alternatively, use :thread-subject
@@ -54,7 +54,7 @@
 ;; use "true" for the command (this is the default)
 (setq
  mu4e-get-mail-command "offlineimap"
- mu4e-update-interval 300)
+ mu4e-update-interval 1800)
 
 ;; general emacs mail settings; used when composing e-mail
 ;; the non-mu4e-* stuff is inherited from emacs/message-mode

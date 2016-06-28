@@ -37,7 +37,7 @@
          :base-directory "/home/bill.huang/documents/m/server/wiki/org"
          :publishing-directory "/home/bill.huang/workspace/Documents/server/sources"
          :recursive t
-         :base-extension "tex\\|org\\|css\\|js\\|png\\|jpg\\|gif\\|mp3\\|swf\\|zip\\|gz\\|txt"
+         :base-extension "tex\\|org\\|css\\|js\\|png\\|jpg\\|gif\\|mp3\\|swf\\|zip\\|gz\\|txt\\|json\\|uml\\|xml\\|java"
          :publishing-function org-publish-attachment)
         ("g-pdf"
          :base-directory "/home/bill.huang/documents/m/server/wiki/pdf"

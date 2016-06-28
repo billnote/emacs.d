@@ -11,6 +11,11 @@
 (require 'init-org-to-pdf)
 (require 'init-rust)
 (require 'init-mu4e)
+(require 'init-eclim)
+(require 'init-hydra)
+(require 'init-srspeedbar)
+(require 'init-tabbar)
+(require 'protobuf-mode)
 
 (provide 'init-local)
 ;;; init-local.el ends here

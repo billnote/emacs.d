@@ -31,6 +31,7 @@
 \\usepackage{verbatim}
 \\usepackage{fixltx2e}
 \\usepackage{longtable}
+\\usepackage{tabu}
 \\usepackage{float}
 \\usepackage{tikz}
 \\usepackage{wrapfig}
@@ -45,13 +46,16 @@
 \\usepackage{latexsym}
 \\usepackage{natbib}
 \\usepackage{array,tabularx}
-\\usepackage{tcolorbox}
+\\usepackage[listings,skins,breakable]{tcolorbox}
+\\usepackage[obeyspaces]{url}
 \\tcbuselibrary{skins}
 \\tcbuselibrary{hooks}
+\\tcbuselibrary{breakable}
 \\usepackage[xetex,colorlinks=true,CJKbookmarks=true,linkcolor=blue,urlcolor=blue,menucolor=blue]{hyperref}
 \\usepackage{fontspec,xunicode,xltxtra}
 \\usepackage{fancyhdr} %设置页眉页脚的宏包
 \\usepackage{indentfirst}
+\\usepackage{courier}
 \\setmainfont[BoldFont=Liberation Sans]{Liberation Sans}
 \\setsansfont[BoldFont=Liberation Sans]{Liberation Sans}
 \\setmonofont{Liberation Mono}
@@ -83,7 +87,7 @@
     keywordstyle=\\color{magenta},
     numberstyle=\\tiny\\color{codegray},
     stringstyle=\\color{codepurple},
-    basicstyle=\\footnotesize,
+    basicstyle=\\footnotesize\\ttfamily,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
