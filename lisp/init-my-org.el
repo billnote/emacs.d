@@ -25,7 +25,8 @@
  '(
    (dot . t)
    (plantuml . t)
-   (ditaa . t)))
+   (ditaa . t)
+   (sh . t)))
 
 ;;生成图像不提示
 (setq org-confirm-babel-evaluate nil)
