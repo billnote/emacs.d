@@ -4,6 +4,7 @@
 ;;; Code:
 
 (require-package 'sr-speedbar)
+(require-package 'helm)
 (require 'sr-speedbar)
 
 

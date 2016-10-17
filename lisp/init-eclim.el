@@ -7,6 +7,7 @@
 (require-package 'smartscan)
 (require-package 'ggtags)
 (require-package 'idle-highlight-mode)
+(require-package 'auto-complete)
 
 (require 'eclim)
 (require 'eclimd )
@@ -14,7 +15,7 @@
 
 (setq eclim-auto-save t ;; You *need* to have this one
       eclim-executable "~/tools/eclipse/eclim" ;; Where the eclim installation is in
-      eclimd-default-workspace "~/workspace/.ads" ;; Eclipse workspace
+      eclimd-default-workspace "~/workspace/.eclim" ;; Eclipse workspace
       eclim-use-yasnippet nil
       eclimd-wait-for-process nil
       eclim-autoupdate-problems nil
@@ -28,7 +29,7 @@
 (ac-config-default)
 
 ;; Add the emacs-eclim source
-(require 'ac-emacs-eclim-source)
+(require 'ac-emacs-eclim)
 (ac-emacs-eclim-config)
 
 (require 'company)
@@ -51,7 +52,7 @@
 
   ;; Only include eclim candidates in the completion menu, must be run
   ;; after eclim-mode above.
-  (setq ac-sources '(ac-source-emacs-eclim))
+  ;;  (setq ac-sources '(ac-source-emacs-eclim))
 
   (define-key c-mode-base-map (kbd "C-S-o") 'eclim-java-import-organize)
   (define-key c-mode-base-map (kbd "C-S-e") 'eclim-problems-show-errors)
