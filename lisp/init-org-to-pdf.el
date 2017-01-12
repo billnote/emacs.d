@@ -100,7 +100,9 @@
     tabsize=4,
     frame=single,
     frameround=tttt,
-    framerule=8pt}
+    framerule=8pt,
+    xrightmargin=4mm,
+    xleftmargin=4mm}
 
 % flip the switch if a colon is found in Pmode
 \\newcommand\\processColon@codestyle{%

@@ -20,6 +20,11 @@
 (require 'init-my-sql)
 (require 'init-thrift)
 (require 'init-keybinding)
+(require 'init-mode-line)
+
+;; set fonts
+(add-to-list 'default-frame-alist '(font . "Fira Code-10"))
+(set-face-attribute 'default t :font "Fira Code-10")
 
 (provide 'init-local)
 ;;; init-local.el ends here

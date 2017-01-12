@@ -3,11 +3,13 @@
 ;;; init eclim
 ;;; Code:
 
-(require-package 'emacs-eclim)
+(require-package 'eclim)
 (require-package 'smartscan)
 (require-package 'ggtags)
 (require-package 'idle-highlight-mode)
 (require-package 'auto-complete)
+(require-package 'ac-emacs-eclim)
+(require-package 'company-emacs-eclim)
 
 (require 'eclim)
 (require 'eclimd )
