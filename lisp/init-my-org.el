@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; org project config
 ;;; Code:
+(require-package 'org-plus-contrib)
 
 (setq org-agenda-files (list "~/.todo/" "~/.todo/.bill/"))
 (define-key global-map "\C-cc" 'org-capture)

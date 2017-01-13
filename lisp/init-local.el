@@ -21,6 +21,7 @@
 (require 'init-thrift)
 (require 'init-keybinding)
 (require 'init-mode-line)
+(require 'init-wp-blog)
 
 ;; set fonts
 (add-to-list 'default-frame-alist '(font . "Fira Code-10"))

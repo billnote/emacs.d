@@ -2,10 +2,13 @@
 ;;; Commentary:
 ;;; use smart-mode-line and powerline
 ;;; Code:
+(require-package 'powerline)
 (require-package 'smart-mode-line)
-(require 'smart-mode-line-solarized-powerline-theme)
+(require-package 'smart-mode-line-powerline-theme)
+;; (require 'smart-mode-line-solarized-powerline-theme)
 
-(setq sml/theme 'solarized-powerline)
+;; (setq sml/theme 'solarized-powerline)
+(setq sml/theme 'powerline)
 (sml/setup)
 
 
