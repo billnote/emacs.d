@@ -59,7 +59,18 @@
          :auto-sitemap t
          :sitemap-filename "sitemap.org"
          :sitemap-title "sitemap"
-         :sitemap-sort-folders "last")
+         :sitemap-sort-folders "last"
+         :html-head-extra "<link rel=\"alternate\" type=\"application/rss+xml\"
+                href=\"http://billhuang.me/sitemap.xml\"
+                title=\"RSS feed for billhuang.me\">")
+        ("blog-rss"
+         :base-directory "/home/bill.huang/documents/mymind/org"
+         :publishing-directory "/home/bill.huang/documents/mymind/blog"
+         :base-extension "org"
+         :publishing-function org-rss-publish-to-rss
+         :html-link-home "http://billhuang.me/"
+         :exclude ".*"
+         :include ("sitemap.org"))
         ("blog-static"
          :base-directory "/home/bill.huang/documents/mymind/org"
          :publishing-directory "/home/bill.huang/documents/mymind/blog"
@@ -73,7 +84,7 @@
          :base-extension "dot\\|org\\|java"
          :publishing-function org-publish-attachment)
         ("blog"
-         :components ("blog-html" "blog-static" "blog-sources")
+         :components ("blog-html" "blog-rss" "blog-static" "blog-sources")
          :author "billyhuang@sina.cn")))
 
 (provide 'init-org-publish)
