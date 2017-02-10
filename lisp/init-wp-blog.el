@@ -17,5 +17,15 @@
            :username ,(car credentials)
            :password ,(cadr credentials)))))
 
+(setq org2blog/wp-use-sourcecode-shortcode 't)
+(setq org2blog/wp-sourcecode-default-params nil)
+(setq org2blog/wp-sourcecode-langs
+      '("actionscript3" "bash" "coldfusion" "cpp" "csharp" "css" "delphi"
+        "erlang" "fsharp" "diff" "groovy" "javascript" "java" "javafx" "matlab"
+        "objc" "perl" "php" "text" "powershell" "python" "ruby" "scala" "sql"
+        "vb" "xml"
+        "sh" "emacs-lisp" "lisp" "lua"))
+(setq org-src-fontify-natively 't)
+
 (provide 'init-wp-blog)
 ;;; init-wp-blog.el ends here

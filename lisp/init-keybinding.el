@@ -4,7 +4,7 @@
 ;;; Code:
 
 ;; global key binding
-(global-unset-key (kbd "C-S-SPC"))
+(global-set-key (kbd "C-S-SPC") nil)
 
 ;; dired mode key binding
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

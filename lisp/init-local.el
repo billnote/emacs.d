@@ -11,7 +11,7 @@
 (require 'init-org-to-pdf)
 (require 'init-rust)
 (require 'init-mu4e)
-(require 'init-eclim)
+;; (require 'init-eclim)
 (require 'init-hydra)
 (require 'init-srspeedbar)
 (require 'init-tabbar)
