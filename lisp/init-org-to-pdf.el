@@ -167,23 +167,6 @@
       '(("style" "codestyle")))
 ;; Make Org use ido-completing-read for most of its completing prompts.
 (setq org-completion-use-ido t)
-;; 各种Babel语言支持
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((R . t)
-   (emacs-lisp . t)
-   (matlab . t)
-   (C . t)
-   (perl . t)
-   (sh . t)
-   (ditaa . t)
-   (python . t)
-   (haskell . t)
-   (dot . t)
-   (latex . t)
-   (js . t)
-   (java . t)
-   ))
 
 ;; 导出Beamer的设置
 ;; allow for export=>beamer by placing #+LaTeX_CLASS: beamer in org files

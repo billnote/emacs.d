@@ -5,7 +5,6 @@
 
 (require 'init-linum)
 (require 'init-scheme)
-(require 'init-my-org)
 (require 'init-yasnippet)
 (require 'init-org-publish)
 (require 'init-org-to-pdf)
@@ -22,6 +21,7 @@
 (require 'init-keybinding)
 (require 'init-mode-line)
 (require 'init-wp-blog)
+(require 'init-my-org)
 
 ;; set fonts
 (add-to-list 'default-frame-alist '(font . "Fira Code-10"))

@@ -12,9 +12,7 @@
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :auto-sitemap t
-         :sitemap-filename "sitemap.org"
-         :sitemap-title "sitemap"
+         :exclude "mplusadx-api-dsp-upload.org"
          :sitemap-sort-folders "last")
         ("m-static"
          :base-directory "/home/bill.huang/documents/m/server/wiki/org"
@@ -28,9 +26,7 @@
          :base-extension "org"
          :recursive t
          :publishing-function org-latex-publish-to-pdf
-         :auto-sitemap t
-         :sitemap-filename "sitemap.org"
-         :sitemap-title "sitemap"
+         :exclude "mplusadx-api-dsp-upload.org"
          :sitemap-sort-folders "last"
          )
         ("g-static"

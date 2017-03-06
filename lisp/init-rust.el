@@ -12,8 +12,8 @@
 (require-package 'flycheck-rust)
 
 (setq company-idle-delay 0.2)
-(setq racer-cmd "~/.cargo/bin/racer")
-(setq racer-rust-src-path "~/workspace/rust-projects/rust/src")
+;; (setq racer-cmd "~/.cargo/bin/racer")
+;; (setq racer-rust-src-path "~/workspace/rust-projects/rust/src")
 
 (add-hook 'rust-mode-hook #'rustfmt-enable-on-save)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))

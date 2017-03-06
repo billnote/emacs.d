@@ -21,16 +21,29 @@
 (setq org-plantuml-jar-path "~/.emacs.d/tools/plantuml/plantuml.jar")
 (setq org-ditaa-jar-path "~/.emacs.d/tools/ditaa/ditaa.jar")
 
+;; 各种Babel语言支持
 (org-babel-do-load-languages
  'org-babel-load-languages
- '(
-   (dot . t)
-   (plantuml . t)
+ '((R . t)
+   (emacs-lisp . t)
+   (matlab . t)
+   (C . t)
+   (perl . t)
+   (sh . t)
    (ditaa . t)
-   (sh . t)))
+   (python . t)
+   (haskell . t)
+   (dot . t)
+   (latex . t)
+   (js . t)
+   (java . t)
+   (plantuml . t)
+   ))
 
 ;;生成图像不提示
 (setq org-confirm-babel-evaluate nil)
+
+(setq org-src-fontify-natively t)
 
 ;;(setq org-export-with-sub-superscripts {})
 
