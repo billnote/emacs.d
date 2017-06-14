@@ -4,7 +4,7 @@
 ;;; Code:
 
 (require-package 'rust-mode)
-(require-package 'rustfmt)
+;; (require-package 'rustfmt)
 (require-package 'racer)
 (require-package 'company)
 (require-package 'company-racer)
@@ -15,8 +15,8 @@
 ;; (setq racer-cmd "~/.cargo/bin/racer")
 ;; (setq racer-rust-src-path "~/workspace/rust-projects/rust/src")
 
-(add-hook 'rust-mode-hook #'rustfmt-enable-on-save)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(setq rust-format-on-save t)
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
@@ -28,7 +28,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (add-hook 'rust-mode-hook                                                   ;;
-;;           '(lambda ()                                                            ;;
+;;           '(lambda ()                                                       ;;
 ;;              ;; Enable racer                                                ;;
 ;;              (racer-activate)                                               ;;
 ;;              ;; Hook in racer with eldoc to provide documentation           ;;
