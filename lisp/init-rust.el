@@ -10,6 +10,7 @@
 (require-package 'company-racer)
 (require-package 'flycheck)
 (require-package 'flycheck-rust)
+(require-package 'cargo)
 
 (setq company-idle-delay 0.2)
 ;; (setq racer-cmd "~/.cargo/bin/racer")
@@ -22,6 +23,7 @@
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(add-hook 'rust-mode-hook #'cargo-minor-mode)
 
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)

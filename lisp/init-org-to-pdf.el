@@ -56,11 +56,11 @@
 \\usepackage{fancyhdr} %设置页眉页脚的宏包
 \\usepackage{indentfirst}
 \\usepackage{courier}
-\\setmainfont[BoldFont=Liberation Sans]{Liberation Sans}
-\\setsansfont[BoldFont=Liberation Sans]{Liberation Sans}
-\\setmonofont{Liberation Mono}
-\\setCJKmainfont{WenQuanYi Micro Hei}%中文字体
-\\setCJKmonofont{WenQuanYi Micro Hei Mono}
+\\setmainfont[BoldFont=Arial]{Arial}
+\\setsansfont[BoldFont=Arial]{Arial}
+\\setmonofont{Andale Mono}
+\\setCJKmainfont{Kaiti SC}%中文字体
+\\setCJKmonofont{Kaiti SC}
 \\hypersetup{unicode=true}
 \\geometry{a4paper, textwidth=6.5in, textheight=10in,marginparsep=7pt, marginparwidth=.6in}
 \\definecolor{codegreen}{rgb}{0,0.6,0}
@@ -77,6 +77,7 @@
 \\pagestyle{fancy}
 \\newcommand\\JSONnumbervaluestyle{\\color{blue}}
 \\newcommand\\JSONstringvaluestyle{\\color{red}}
+\\definecolor{myblue}{RGB}{20,105,176}
 % switch used as state variable
 \\newif\\ifcolonfoundonthisline
 \\makeatletter
@@ -143,12 +144,27 @@
       {[}{{{\\color{delim}{[}}}}{1}
       {]}{{{\\color{delim}{]}}}}{1},
 }
+
 \\lstdefinelanguage{js}{ % support js
     morekeywords={typeof,new,true,false,catch,function,return,null,catch,switch,var,if,in,while,do,else,case,break},
     morecomment=[l]//,
     morecomment=[s]{/*}{*/},
     morestring=[b]\",
     morestring=[b]\',
+    }[keywords,comments,strings]
+\\setlength\\arrayrulewidth{0.8pt}\\arrayrulecolor{MidnightBlue} % table line style
+
+\\lstdefinelanguage{protobuf}{ % support protobuf
+    morekeywords={double,float,int32,int64,uint32,uint64,sint32,sint64,fixed32,sfixed32,sfiex64,bool,string,bytes,messageType,enumType,map},
+    morecomment=[l]//,
+    morecomment=[s]{/*}{*/},
+    morestring=[b]\",
+    morestring=[b]\',
+    classoffset=1, % starting new class
+    otherkeywords={message,required,optional,repeated,syntax,import,package,public,group},
+    morekeywords={message,required,optional,repeated,syntax,import,package,public,group},
+    keywordstyle=\\color{myblue},
+    classoffset=0,
     }[keywords,comments,strings]
 \\setlength\\arrayrulewidth{0.8pt}\\arrayrulecolor{MidnightBlue} % table line style
 %\\rowcolors{1}{Linen}{Beige} % table 行颜色设置
@@ -197,10 +213,10 @@
 \\institute{{{{beamerinstitute}}}}
 \\subject{{{{beamersubject}}}}"
                ("\\section{%s}" . "\\section*{%s}")
-               ("\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}"
-                "\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}")))
+               p  ("\\begin{frame}[fragile]\\frametitle{%s}"
+                   "\\end{frame}"
+                   "\\begin{frame}[fragile]\\frametitle{%s}"
+                   "\\end{frame}")))
 
 (setq ps-paper-type 'a4
       ps-font-size 16.0

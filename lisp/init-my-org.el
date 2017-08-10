@@ -4,6 +4,9 @@
 ;;; Code:
 (require-package 'org-plus-contrib)
 (require-package 'gnuplot-mode)
+(require-package 'sql)
+
+(require 'scrum-zh)
 
 (setq org-agenda-files (list "~/.todo/" "~/.todo/.bill/"))
 (define-key global-map "\C-cc" 'org-capture)
@@ -57,6 +60,7 @@
    (java . t)
    (plantuml . t)
    (gnuplot . t )
+   (sql . t)
    ))
 
 ;;生成图像不提示

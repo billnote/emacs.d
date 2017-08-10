@@ -20,14 +20,20 @@
 (require 'init-my-sql)
 (require 'init-thrift)
 (require 'init-keybinding)
-(require 'init-mode-line)
 (require 'init-wp-blog)
 (require 'init-go)
 (require 'init-plantuml)
+(require 'init-emojify)
+(require 'init-chinese-font)
+(require 'init-dot)
+(require 'init-nodejs)
+(require 'init-icons)
+(require 'init-mode-line)
+(require 'init-neotree)
 
 ;; set fonts
-(add-to-list 'default-frame-alist '(font . "Fira Code-10"))
-(set-face-attribute 'default t :font "Fira Code-10")
+;;(add-to-list 'default-frame-alist '(font . "Fira Code-10"))
+;;(set-face-attribute 'default t :font "Fira Code-10")
 
 (provide 'init-local)
 ;;; init-local.el ends here
