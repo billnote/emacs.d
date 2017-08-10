@@ -3,6 +3,10 @@
 ;;; my custom config
 ;;; Code:
 
+;;; use china Mirror
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
+                         ("org" . "http://elpa.emacs-china.org/org/")))
 (require 'init-linum)
 (require 'init-scheme)
 (require 'init-yasnippet)
