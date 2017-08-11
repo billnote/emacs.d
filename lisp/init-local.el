@@ -3,10 +3,17 @@
 ;;; my custom config
 ;;; Code:
 
+;;; open debugss
+;; (setq debug-on-error t)
 ;;; use china Mirror
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
                          ("melpa" . "http://elpa.emacs-china.org/melpa/")
                          ("org" . "http://elpa.emacs-china.org/org/")))
+
+;;; performance for flycheck
+(with-eval-after-load 'flycheck
+  (advice-add 'flycheck-eslint-config-exists-p :override (lambda() t)))
+
 (require 'init-linum)
 (require 'init-scheme)
 (require 'init-yasnippet)
